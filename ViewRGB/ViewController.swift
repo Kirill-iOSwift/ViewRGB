@@ -29,16 +29,15 @@ final class ViewController: UIViewController {
     
     //MARK: - IBActions
     
-    @IBAction func redSliderAction() {
+    @IBAction func sliderAction() {
         
-        setupRadRande()
+        setupRange()
         setupColor()
-        
     }
     
     //MARK: - Private Methods
     
-    private func setupRadRande(){
+    private func setupRange(){
         
         redRange.text = String(format: "%.2f", redSlider.value)
         greenRange.text = String(format: "%.2f", greenSlider.value)
