@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     //MARK: - IBOulets
     
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.layer.cornerRadius = 20
-        setupRedSlider()
+        setupColor()
     }
     
     //MARK: - IBActions
@@ -32,13 +32,8 @@ class ViewController: UIViewController {
     @IBAction func redSliderAction() {
         
         setupRadRande()
+        setupColor()
         
-        mainView.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
-            alpha: 1
-        )
     }
     
     //MARK: - Private Methods
@@ -50,17 +45,13 @@ class ViewController: UIViewController {
         blueRange.text = String(format: "%.2f", blueSlider.value)
     }
     
-    private func setupRedSlider() {
-        
-        redSlider.minimumValue = 0
-        redSlider.maximumValue = 1
-        
-        
-        greenSlider.minimumValue = 0
-        greenSlider.maximumValue = 1
-        
-        blueSlider.minimumValue = 0
-        blueSlider.maximumValue = 1
+    private func setupColor() {
+        mainView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
     }
 }
 
